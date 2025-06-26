@@ -1,0 +1,35 @@
+<header class="d-flex flex-wrap align-items-center justify-content-between py-3  border px-3">
+    <a href="/" class="d-flex align-items-center mb-2 mb-md-0 text-dark text-decoration-none ">
+      <%= image_tag 'log.svg', class: 'me-2', style: 'width: 200px' %>
+    </a>
+    <ul class="nav col-12 col-md-auto justify-content-center gap-2">
+      <li>
+        <%= link_to 'home', '#',  class: 'nav-link px-2 link-secondary' %>
+      </li>
+      <li>
+        <%= link_to 'home', '#',  class: 'nav-link px-2 link-secondary' %>
+      </li>
+      <li>
+        <%= link_to 'home', '#',  class: 'nav-link px-2 link-secondary' %>
+      </li>
+      <li>
+        <%= link_to 'home', '#',  class: 'nav-link px-2 link-secondary' %>
+      </li>
+    </ul>
+    <div>
+    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+        <label class="btn" for="btnradio1">
+          <%= image_tag 'korea.svg'%>
+          Korean
+        </label>
+
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+        <label class="btn" for="btnradio2">
+          <%= image_tag 'japan.svg', class: 'pt-1'%>
+            Japanese
+        </label>
+    </div>
+      <%= link_to "Sign In", "#", class: 'btn btn-outline-primary me-2' %>
+    </div>
+</header>
