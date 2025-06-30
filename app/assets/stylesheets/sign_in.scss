@@ -1,0 +1,22 @@
+.add_line {
+    position: relative;
+}
+
+.add_line::before {
+    content: "";
+    border-bottom: 1px solid #ccc;
+    position: absolute;
+    top: 50%;
+    right: 70%;
+    left: 0;
+}
+
+.add_line::after {
+    content: "";
+    border-bottom: 1px solid #ccc;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 70%;
+}
+
