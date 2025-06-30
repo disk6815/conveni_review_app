@@ -1,0 +1,37 @@
+.image-wrapper {
+    height: 250px;
+    max-height: 250px;
+}
+
+.text_content {
+    background-color: white; 
+    border-radius: 20px; 
+    color: #333; 
+    border: 1px solid black; 
+    height: 100%; 
+    padding: 20px;
+}
+
+.btn-group {
+    .btn-check {
+        &:checked + .btn {
+            background-color: #EEEEEF;
+            border-color: #ccc;
+            color: #333;
+        }
+    }
+    .btn {
+        border: 1px solid #ccc;
+    }
+}
+
+@media (max-width: 576px) {
+  .image-wrapper {
+    height: 150px;
+    max-height: 150px;
+  }
+
+  .container-md {
+    width: 100%;
+  }
+}

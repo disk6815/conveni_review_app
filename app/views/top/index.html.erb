@@ -32,35 +32,33 @@
       </div>
   </div>
 
-    <div class='row py-5'>
-        <div class='col-md-7' >
-            <div class='mb-0 text-start text_content'>
-                <p class='h-50 d-flex align-items-center justify-content-start'>
-                    みんなでコンビニ商品を紹介しよう！！
-                </p>
-                <p>
-                    ログイン前は一覧のみ可能だよ!
-                    <%= image_tag 'memo.svg', style:'height: 40px; width:40px;' %>
-                </p>
-            </div>
-        </div>
-        <div class='col-md col'>
-            <h3>投稿履歴</h3>
-            <div class="image-wrapper">
-                <%= link_to '#' do %>
-                    <%= image_tag 'mypost.jpg', class: 'w-100 h-100', style: 'object-fit: cover;  border-radius: 20px;' %>
-                <% end %>
-            </div> 
-        </div>
-
-        <div class='col-md col'>
-            <h3>サービス概要</h3>
-            <div class="image-wrapper">
-                <%= link_to '#' do %>
-                    <%= image_tag 'service.jpg', class: 'w-100 h-100', style: 'object-fit: cover;  border-radius: 20px;' %>
-                <% end %>
-            </div>
+  <div class='row pb-5 text_box'>
+    <div class='col-md-7' >
+        <div class='mb-0 text-start text_content'>
+            <p class='h-50 d-flex align-items-center justify-content-start'>
+                みんなでコンビニ商品を紹介しよう！！
+            </p>
+            <p>
+                ログイン前は一覧のみ可能だよ!
+                <%= image_tag 'memo.svg', style:'height: 40px; width:40px;' %>
+            </p>
         </div>
     </div>
-
+    <div class='col-md col'>
+        <h3>投稿履歴</h3>
+        <div class="image-wrapper">
+            <%= link_to '#' do %>
+                <%= image_tag 'mypost.jpg', class: 'w-100 h-100', style: 'object-fit: cover;  border-radius: 20px;' %>
+            <% end %>
+        </div> 
+    </div>
+    <div class='col-md col'>
+        <h3>サービス概要</h3>
+        <div class="image-wrapper">
+            <%= link_to '#' do %>
+                <%= image_tag 'service.jpg', class: 'w-100 h-100', style: 'object-fit: cover;  border-radius: 20px;' %>
+            <% end %>
+        </div>
+    </div>
+  </div> 
 </div>

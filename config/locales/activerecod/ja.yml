@@ -1,0 +1,20 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+    attributes:
+      user:
+        name: 名前
+        nationality: 国籍
+        language: 言語
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: パスワード確認
+  enums:
+    user:
+      nationality:
+        kr: 韓国
+        jp: 日本
+      language:
+        ko: 韓国語
+        ja: 日本語
