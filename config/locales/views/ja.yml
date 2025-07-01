@@ -1,0 +1,11 @@
+ja:
+  users:
+    registrations:
+      new:
+        title: "ユーザー登録"
+    sessions:
+      new:
+        title: "ログイン" 
+  header:
+    sign_in: "ログイン"
+    sign_up: "新規登録"
