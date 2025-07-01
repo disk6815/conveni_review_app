@@ -2,7 +2,7 @@
   <%= image_tag 'log.svg', style: 'width:200px;'%>
 </div>
 <div class='container bg-white p-4 shadow-sm rounded-3 w-50'>
-  <h2 class='text-center'>Log in</h2>
+  <h2 class='text-center'><%= t('.title') %></h2>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="field mt-3">

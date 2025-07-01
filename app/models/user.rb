@@ -6,6 +6,8 @@ class User < ApplicationRecord
   enum nationality: { kr: 0, jp: 1 }
   enum language: { ko: 0, ja: 1 }
 
+  validates :name, presence: true, length: { maximum: 50 }
+
   def self.nationalities_i18n
     nationalities.keys.index_with { |key| I18n.t("enums.user.nationality.#{key}") }
   end
