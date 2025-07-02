@@ -1,0 +1,6 @@
+<h1>review form</h1>
+<%= form_with model:@review do |f| %>
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+    <%= f.submit nil%>
+<% end %>
