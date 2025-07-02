@@ -5,7 +5,7 @@
         レビュー一覧
       </h3>
       <div class="image-wrapper">
-       <%= link_to '#' do %>
+       <%= link_to reviews_path do %>
          <%= image_tag 'review_index.png', class: 'w-100 h-100', style: 'object-fit: cover;  border-radius: 20px;' %>
        <% end %>
       </div> 
@@ -15,7 +15,7 @@
           投稿する
         </h3>
         <div class="image-wrapper">
-         <%= link_to '#' do %>
+         <%= link_to reviews_new_path do %>
            <%= image_tag 'post.jpg', class: 'w-100 h-100', style: 'object-fit: cover;  border-radius: 20px;' %>
          <% end %>
         </div> 
