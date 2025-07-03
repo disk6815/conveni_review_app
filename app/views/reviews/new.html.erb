@@ -1,13 +1,1 @@
-<h1>review form</h1>
-
-<%= form_with model: @review_form, url: reviews_path do |f| %>
-    <%= f.label :body %>
-    <%= f.text_area :body %>
-
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-
-    <%= f.label :price %>
-    <%= f.number_field :price %>yen
-    <%= f.submit nil%>
-<% end %>
+<%= render 'forms/review_form', review_form: :@review_form %>

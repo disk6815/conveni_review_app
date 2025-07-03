@@ -3,8 +3,9 @@
 <% @reviews.each do |review| %>
     <div>
         <p>review id: <%= review.id%></p>
+        <p><%= review.product.name%></p>
         <p><%= review.body %></p>
         <p><%= review.user.id %></p>
         <p><%= review.user.name %></p>
-    <div>
+    </div>
 <% end %>
