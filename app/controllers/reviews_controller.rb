@@ -8,12 +8,13 @@ class ReviewsController < ApplicationController
   end
 
   def new
-    @review = Review.new
+    @review_form = Review.new
   end
 
   def create
-    @review = current_user.reviews.build(review_params)
-    if @review.save
+    @review_form = current_user.reviews.build(review_forms_params)
+    @review_form.user_id = current_user.id
+    if @review_form.save
       redirect_to reviews_path
     else
       render :new
@@ -31,7 +32,7 @@ class ReviewsController < ApplicationController
 
   private
 
-  def review_params
-    params.require(:review).permit(:body)
+  def review_forms_params
+    params.require(:review_form).permit(:bod, :rating, :user_id, :product_id, :name, :price, :is_official)
   end
 end
