@@ -10,9 +10,9 @@ class ReviewForm
   attribute :name, :string
   attribute :price, :integer
   attribute :is_official, :boolean, default: false
-  
+
   validates :body, presence: true, length: { maximum: 500 }
-  validates :name, presence:true
+  validates :name, presence: true
 
   def save
     return false if invalid?
