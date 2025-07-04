@@ -1,2 +1,8 @@
-<h1>Reviews#show</h1>
-<p>Find me in app/views/reviews/show.html.erb</p>
+<h1>詳細ページです</h1>
+
+<%= link_to '削除', review_path(@review), data: { turbo_method: :delete, turbo_confirm: '削除しますか？' } %>
+<P>レビュIDは<%= @review.id%>です</P>
+<p>商品名は<%= @review.product.name %>です</p>
+<p>レビュー内容は<%= @review.body %>です</p>
+<p>レビュアーIDは<%= @review.user.id %>です</p>
+<p>レビュアー名は<%= @review.user.name %>です</p

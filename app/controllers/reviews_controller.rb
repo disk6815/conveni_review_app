@@ -5,6 +5,7 @@ class ReviewsController < ApplicationController
   end
 
   def show
+    @review = current_user.reviews.find(params[:id])
   end
 
   def new
@@ -30,6 +31,9 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
+    @review = current_user.reviews.find(params[:id])
+    @review.destroy
+    redirect_to reviews_path, notice: 'saccessfully deleted.'
   end
 
   private

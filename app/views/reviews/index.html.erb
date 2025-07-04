@@ -1,6 +1,9 @@
 <h1>Reviews#index</h1>
 <p>Find me in app/views/reviews/index.html.erb</p>
+
 <% @reviews.each do |review| %>
+<%# This is a loop to display each review %>
+    <%= link_to 'delete', review_path(review), data: { turbo_method: :delete, turbo_confirm: 'really' }  %>
     <div>
         <p>review id: <%= review.id%></p>
         <p><%= review.product.name%></p>
