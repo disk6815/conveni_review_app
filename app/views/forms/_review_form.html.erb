@@ -3,8 +3,11 @@
 <div class='container w-50'>
     <%= form_with model: @review_form, url: reviews_path, local: true do |f| %>
         
-        <%= f.label :name, class: 'form-label' %>
-        <%= f.text_field :name, class:'form-control' %>
+        <%= f.label :conveniencestore_id, class: 'form-label' %>
+        <%= f.collection_select :conveniencestore_id, Conveniencestore.all, :id, :name, {}, class: 'form-select' %>   
+
+        <%= f.label :product_name, class: 'form-label' %>
+        <%= f.text_field :product_name, class:'form-control' %>
 
         <%= f.label :price, class: 'form-label' %>
         <%= f.number_field :price, class:'form-control' %>
