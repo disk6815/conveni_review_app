@@ -6,6 +6,6 @@ class CreateReviewCategories < ActiveRecord::Migration[7.2]
 
       t.timestamps
     end
-    add_index :review_categories, [:review_id, :category_id], unique: true
+    add_index :review_categories, [ :review_id, :category_id ], unique: true
   end
 end

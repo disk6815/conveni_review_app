@@ -33,7 +33,7 @@ class ReviewsController < ApplicationController
   def destroy
     @review = current_user.reviews.find(params[:id])
     @review.destroy
-    redirect_to reviews_path, notice: 'saccessfully deleted.'
+    redirect_to reviews_path, notice: "saccessfully deleted."
   end
 
   private
