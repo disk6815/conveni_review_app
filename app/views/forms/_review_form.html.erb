@@ -12,6 +12,10 @@
         <%= f.label :price, class: 'form-label' %>
         <%= f.number_field :price, class:'form-control' %>
 
+        <%= f.label :category_id, class: 'form-label' %>
+        <%= f.collection_select :category_id, Category.all, :id, :name, {include_blank: true}, class: 'form-select' %>   
+
+
         <%= f.label :body, class: 'form-label' %>
         <%= f.text_area :body, class:'form-control' %>
         <%= f.submit nil%>

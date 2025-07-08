@@ -11,6 +11,7 @@ class ReviewForm
   attribute :price, :integer
   attribute :is_official, :boolean, default: false
   attribute :conveniencestore_id, :integer
+  attribute :category_id
 
   validates :body, presence: true, length: { maximum: 500 }
   validates :product_name, presence: true

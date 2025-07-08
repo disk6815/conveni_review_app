@@ -18,7 +18,7 @@ class ReviewsController < ApplicationController
     if @review_form.save
       redirect_to reviews_path
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
     # puts @review_form.errors.full_messages
     # puts @review_form.params.inspect
@@ -39,6 +39,6 @@ class ReviewsController < ApplicationController
   private
 
   def review_form_params
-    params.require(:review_form).permit(:body, :rating, :product_id, :product_name, :price, :is_official, :conveniencestore_id)
+    params.require(:review_form).permit(:body, :rating, :product_id, :product_name, :price, :is_official, :conveniencestore_id, :category_id)
   end
 end
