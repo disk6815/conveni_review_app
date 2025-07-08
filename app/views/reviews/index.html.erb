@@ -6,6 +6,7 @@
     <%= link_to 'delete', review_path(review), data: { turbo_method: :delete, turbo_confirm: 'really' }  %>
     <div>
         <p>review id: <%= review.id%></p>
+        <p><%= review.product.conveniencestore.name%>
         <p><%= review.product.name%></p>
         <p><%= review.body %></p>
         <p><%= review.user.id %></p>
