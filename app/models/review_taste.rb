@@ -1,0 +1,2 @@
+class ReviewTaste < ApplicationRecord
+end
