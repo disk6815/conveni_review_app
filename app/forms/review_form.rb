@@ -12,6 +12,7 @@ class ReviewForm
   attribute :is_official, :boolean, default: false
   attribute :conveniencestore_id, :integer
   attribute :category_id
+  attribute :taste_id
 
   validates :body, presence: true, length: { maximum: 500 }
   validates :product_name, presence: true
@@ -19,18 +20,30 @@ class ReviewForm
   def save
     return false if invalid?
 
-    product = Product.create!(
+    product = Product.create(
       name: product_name,
       price: price,
       is_official: is_official,
       conveniencestore_id: conveniencestore_id
     )
 
-    Review.create!(
+   review = Review.create(
       body: body,
       rating: rating,
       user_id: user_id,
-      product_id: product.id
+      product_id: product.id,
     )
+
+    ReviewCategory.create(
+      review_id: review.id,
+      category_id: category_id
+    ) if category_id.present?
+
+    ReviewTaste.create(
+      review_id: review.id,
+      taste_id: taste_id
+    ) if taste_id.present?
+
+    true
   end
 end
