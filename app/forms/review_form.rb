@@ -29,7 +29,7 @@ class ReviewForm
 
    review = Review.create(
       body: body,
-      rating: rating,
+      rating: rating.to_i,
       user_id: user_id,
       product_id: product.id,
     )
