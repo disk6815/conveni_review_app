@@ -5,13 +5,27 @@
         <div class='col-12 col-sm-6 col-md-4'>
             <div class='position-relative'>
             <%= link_to 'delete', review_path(review), data: { turbo_method: :delete, turbo_confirm: 'really' }, class: 'btn btn-danger btn-sm m-2' %>
-                <%= link_to edit_review_path(review), class: 'card w-100', style: 'width: 18rem; height: auto;' do %>
-                <div class='card-body'>
+                <%= link_to review_path(review), class: 'card w-100', style: 'width: 18rem; height: auto; text-decoration: none;' do %>
+                <div class='card-body ' >
                     <%= image_tag 'no_image.jpg', class: 'card-img-top' %>
-                    <h5 class='card-title'><%= review.product.conveniencestore.name %></h5>
-                    <p class='card-title'><%= review.product.name %></p>
-                    <p><%= review.user.name %></p>
-                    <p><%= review.user.nationality %></p>
+                    <p class="card-text">
+                        評価：<%= "★" * review.rating.to_i + "☆" * (5 - review.rating.to_i) %>  <%= review.rating %>
+                    </p>
+                    <h5 class='card-title'><%= review.product.name %></h5>
+                    <p class='card-title'>コンビニ名: <%= review.product.conveniencestore.name %></p>
+                    <p>ユーザー名: <%= review.user.name %></p>
+                    <p>国籍:
+                       <% case review.user.nationality %> 
+                        <% when 'jp' %>
+                            <span>
+                                Japan <%= image_tag 'japan.svg', style: 'width: 20px;' %>
+                            </span>
+                            <% when 'kr' %>
+                            <span>
+                                Korea <%= image_tag 'korea.svg', style: 'width: 25px;' %>
+                            </span>
+                        <% end %>
+                    </p>
                 </div>
                 <% end %>
             </div>

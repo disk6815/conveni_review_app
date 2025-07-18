@@ -11,7 +11,10 @@
 
         <%= f.label :price, class: 'form-label' %>
         <%= f.number_field :price, class:'form-control' %>
-
+        
+        <%= f.label :rating, class: 'form-label' %>
+        <%= f.select :rating, options_for_select((0..5).map { |n| [n, n] }), {}, class: 'form-select' %>
+        
         <%= f.label :category_id, class: 'form-label' %>
         <%= f.collection_select :category_id, Category.all, :id, :name, {include_blank: true}, class: 'form-select' %>   
 

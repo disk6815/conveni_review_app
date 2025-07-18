@@ -25,9 +25,20 @@ class ReviewsController < ApplicationController
   end
 
   def edit
+    @review = current_user.reviews.find(params[:id])
+    @review_form = ReviewForm.from_review(@review)
   end
 
   def update
+    @review = current_user.reviews.find(params[:id])
+    @review_form = ReviewForm.from_review(@review)
+    @review_form.assign_attributes(review_form_params)
+
+    if @review_form.update
+      redirect_to review_path(@review), notice: "更新に成功しました"
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy
