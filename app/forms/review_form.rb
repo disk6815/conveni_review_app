@@ -2,6 +2,8 @@ class ReviewForm
   include ActiveModel::Model
   include ActiveModel::Attributes
 
+  attr_accessor :review
+
   # 属性の定義
   attribute :body, :string
   attribute :rating, :float
@@ -46,4 +48,47 @@ class ReviewForm
 
     true
   end
+
+  def self.from_review(review)
+    form = new(
+      user_id: review.user_id,
+      product_id: review.product_id,
+      product_name: review.product.name,
+      price: review.product.price,
+      is_official: review.product.is_official,
+      conveniencestore_id: review.product.conveniencestore_id,
+      category_id: review.categories.present? ? review.categories.first.id : nil,
+      taste_id: review.tastes.present? ? review.tastes.first.id : nil,
+      rating: review.rating,
+      body: review.body
+    )
+    form.review = review # ← インスタンス変数に代入
+    form
+  end
+
+  def update
+    ActiveRecord::Base.transaction do
+      # Productの更新
+      product = review.product
+      product.update!(
+        name: product_name,
+        price: price.presence,
+        is_official: is_official,
+        conveniencestore_id: conveniencestore_id
+      )
+
+      # Reviewの更新
+      review.update!(
+        body: body,
+        rating: rating.to_i
+      )
+
+      # 中間テーブルの更新（先に全部削除してから再追加）
+      review.review_categories.destroy_all
+      review.review_tastes.destroy_all
+
+      review.categories << Category.find(category_id) if category_id.present?
+      review.tastes << Taste.find(taste_id) if taste_id.present?
+    end
+  end 
 end
