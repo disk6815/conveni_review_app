@@ -90,5 +90,9 @@ class ReviewForm
       review.categories << Category.find(category_id) if category_id.present?
       review.tastes << Taste.find(taste_id) if taste_id.present?
     end
+    true
+    rescue => e
+      errors.add(:base, e.message)
+      false
   end
 end
