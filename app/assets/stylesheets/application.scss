@@ -17,3 +17,9 @@ header {
   text-decoration: none;
   color: inherit;
 }
+
+.fix-img {
+  height: 200px;
+  object-fit: cover;
+  width: 100%;
+}

@@ -2,7 +2,7 @@ class ReviewForm
   include ActiveModel::Model
   include ActiveModel::Attributes
 
-  attr_accessor :review
+  attr_accessor :review, :image
 
   # 属性の定義
   attribute :body, :string
@@ -34,6 +34,7 @@ class ReviewForm
       rating: rating.to_i,
       user_id: user_id,
       product_id: product.id,
+      image: image
     )
 
     ReviewCategory.create(
@@ -63,6 +64,7 @@ class ReviewForm
       body: review.body
     )
     form.review = review # ← インスタンス変数に代入
+    form.image = review.image if review.image.present?
     form
   end
 
@@ -80,7 +82,8 @@ class ReviewForm
       # Reviewの更新
       review.update!(
         body: body,
-        rating: rating.to_i
+        rating: rating.to_i,
+        image: image.presence || review.image
       )
 
       # 中間テーブルの更新（先に全部削除してから再追加）

@@ -23,6 +23,16 @@
 
         <%= f.label :body, class: 'form-label' %>
         <%= f.text_area :body, class:'form-control ', style: 'height: 150px;' %>
+
+        <%= f.label :image, class: 'form-label' %>
+        <% if @review_form.review.image.present? %>
+            <div class="current-image mb-3">
+            <%= image_tag @review_form.review.image.url, alt: "現在の画像", class: "img-thumbnail", style: "max-width: 200px;" %>
+            </div>
+        <% end %>
+        <%= f.file_field :image, class: 'form-control' %>
+        
+
         <%= f.submit nil , class: 'btn btn-primary w-100 mt-4'%>
     <% end %>
 </div>
