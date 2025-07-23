@@ -43,7 +43,7 @@ gem "devise"
 
 gem "devise-i18n"
 
-gem "carrierwave", "2.2.2"
+gem "carrierwave", "3.1.2"
 
 gem "fog-aws"
 
