@@ -126,9 +126,15 @@ GEM
     devise-i18n (1.14.0)
       devise (>= 4.9.0)
       rails-i18n
+    dotenv (3.1.8)
+    dotenv-rails (3.1.8)
+      dotenv (= 3.1.8)
+      railties (>= 6.1)
     drb (2.2.3)
     erb (5.0.1)
     erubi (1.13.1)
+    excon (1.2.8)
+      logger
     ffi (1.17.2-aarch64-linux-gnu)
     ffi (1.17.2-aarch64-linux-musl)
     ffi (1.17.2-arm-linux-gnu)
@@ -137,6 +143,22 @@ GEM
     ffi (1.17.2-x86_64-darwin)
     ffi (1.17.2-x86_64-linux-gnu)
     ffi (1.17.2-x86_64-linux-musl)
+    fog-aws (3.24.0)
+      fog-core (~> 2.1)
+      fog-json (~> 1.1)
+      fog-xml (~> 0.1)
+    fog-core (2.6.0)
+      builder
+      excon (~> 1.0)
+      formatador (>= 0.2, < 2.0)
+      mime-types
+    fog-json (1.2.0)
+      fog-core
+      multi_json (~> 1.10)
+    fog-xml (0.1.5)
+      fog-core
+      nokogiri (>= 1.5.11, < 2.0.0)
+    formatador (1.1.1)
     globalid (1.2.1)
       activesupport (>= 6.1)
     google-protobuf (4.31.1)
@@ -189,11 +211,16 @@ GEM
       net-smtp
     marcel (1.0.4)
     matrix (0.4.2)
+    mime-types (3.7.0)
+      logger
+      mime-types-data (~> 3.2025, >= 3.2025.0507)
+    mime-types-data (3.2025.0722)
     mini_magick (5.3.0)
       logger
     mini_mime (1.1.5)
     minitest (5.25.5)
     msgpack (1.8.0)
+    multi_json (1.17.0)
     net-imap (0.5.8)
       date
       net-protocol
@@ -409,6 +436,8 @@ DEPENDENCIES
   debug
   devise
   devise-i18n
+  dotenv-rails
+  fog-aws
   jbuilder
   jsbundling-rails
   pg (~> 1.1)
