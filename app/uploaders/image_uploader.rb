@@ -22,6 +22,10 @@ class ImageUploader < CarrierWave::Uploader::Base
     %w[jpg jpeg gif png]
   end
 
+  def content_type_allowlist
+    [/image\//]
+  end
+
 
   def size_range
     1.byte..10.megabytes

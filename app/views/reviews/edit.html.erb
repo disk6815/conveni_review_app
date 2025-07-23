@@ -1,5 +1,7 @@
 <h1 class='text-center'><%= t('reviews.edit.title')%></h1>
 
+<%= render 'shared/error_messages', object: @review_form %>
+
 <div class='container w-50 pb-5'>
     <%= form_with model: @review_form, url: review_path(@review), method: :patch, local: true do |f| %>
         
