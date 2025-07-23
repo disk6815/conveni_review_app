@@ -2,7 +2,7 @@
   <div class='row py-5'>
     <div class='col-md-7'>
       <h3>
-        レビュー一覧
+        <%= t('top.reviews')%>
       </h3>
       <div class="image-wrapper">
        <%= link_to reviews_path do %>
@@ -12,7 +12,7 @@
     </div>
       <div class='col-md col'>
         <h3>
-          投稿する
+          <%= t('top.post')%>
         </h3>
         <div class="image-wrapper">
          <%= link_to new_review_path do %>
@@ -22,7 +22,7 @@
       </div>
       <div class='col-md col'>
         <h3>
-          リスト
+          <%= t('top.list')%>
         </h3>
         <div class="image-wrapper">
           <%= link_to '#' do %>
@@ -36,16 +36,16 @@
     <div class='col-md-7' >
         <div class='mb-0 text-start text_content'>
             <p class='h-50 d-flex align-items-center justify-content-start'>
-                みんなでコンビニ商品を紹介しよう！！
+                <%= t('top.text_1')%>
             </p>
             <p>
-                ログイン前は一覧のみ可能だよ!
+                <%= t('top.text_2')%>
                 <%= image_tag 'memo.svg', style:'height: 40px; width:40px;' %>
             </p>
         </div>
     </div>
     <div class='col-md col'>
-        <h3>投稿履歴</h3>
+        <h3><%= t('top.post_history')%></h3>
         <div class="image-wrapper">
             <%= link_to '#' do %>
                 <%= image_tag 'mypost.jpg', class: 'w-100 h-100', style: 'object-fit: cover;  border-radius: 20px;' %>
@@ -53,7 +53,7 @@
         </div> 
     </div>
     <div class='col-md col'>
-        <h3>サービス概要</h3>
+        <h3><%= t('top.service')%></h3>
         <div class="image-wrapper">
             <%= link_to '#' do %>
                 <%= image_tag 'service.jpg', class: 'w-100 h-100', style: 'object-fit: cover;  border-radius: 20px;' %>

@@ -14,12 +14,12 @@
                     <% end %>
                     </div>
                     <p class="card-text">
-                        評価：<%= "★" * review.rating.to_i + "☆" * (5 - review.rating.to_i) %>  <%= review.rating %>
+                        <%= t('reviews.index.rating')%>：<%= "★" * review.rating.to_i + "☆" * (5 - review.rating.to_i) %>  <%= review.rating %>
                     </p>
                     <h5 class='card-title'><%= review.product.name %></h5>
-                    <p class='card-title'>コンビニ名: <%= review.product.conveniencestore.name %></p>
-                    <p>ユーザー名: <%= review.user.name %></p>
-                    <p>国籍:
+                    <p class='card-title'><%= t('reviews.index.conveniencestore')%>: <%= review.product.conveniencestore.name %></p>
+                    <p><%= t('reviews.index.user_name')%>: <%= review.user.name %></p>
+                    <p><%= t('reviews.index.nationality')%>:
                        <% case review.user.nationality %> 
                         <% when 'jp' %>
                             <span>

@@ -1,11 +1,54 @@
 ja:
+  helpers:
+    submit:
+      review_form:
+        create: "投稿"
+        update: "変更"
+
   users:
     registrations:
       new:
         title: "ユーザー登録"
     sessions:
       new:
-        title: "ログイン" 
+        title: "ログイン"
+  reviews:
+    index:
+      title: "レビュー一覧"
+      rating: "総合評価" 
+      conveniencestore: "コンビニ名"
+      user_name: "ユーザー名"
+      nationality: "国籍"  
+    show:
+      reviews_back: "一覧ページへ"
+      edit: "編集"
+      delete: "削除"
+      confirm_destroy: "本当に削除しますか？"
+      product_name: "商品名"
+      rating: "総合評価"
+      conveniencestore: "コンビニ名"
+      price: "価格"
+      yen: "円"
+      category: "カテゴリー"
+      taste: "味覚"
+      none: "なし"
+      body: "レビュー内容"
+    new:
+      title: "レビュー投稿"
+    edit:
+      title: "レビュー編集"    
   header:
     sign_in: "ログイン"
     sign_up: "新規登録"
+    reviews: "レビュー一覧"
+    post: "投稿する"
+    post_history: "投稿履歴"
+    list: "リスト"
+  top:
+    reviews: "レビュー一覧"
+    post: "投稿する"
+    post_history: "投稿履歴"
+    list: "リスト"
+    service: "サービス概要"
+    text_1: "みんなでコンビニ商品を紹介しよう！！"
+    text_2: "ログイン前は一覧のみ可能だよ!"
