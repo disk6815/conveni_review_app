@@ -1,4 +1,6 @@
 class Review < ApplicationRecord
+  mount_uploader :image, ImageUploader
+
   has_many :review_categories, dependent: :destroy
   has_many :categories, through: :review_categories
   has_many :review_tastes, dependent: :destroy

@@ -50,6 +50,6 @@ class ReviewsController < ApplicationController
   private
 
   def review_form_params
-    params.require(:review_form).permit(:body, :rating, :product_id, :product_name, :price, :is_official, :conveniencestore_id, :category_id, :taste_id)
+    params.require(:review_form).permit(:body, :rating, :product_id, :product_name, :price, :is_official, :conveniencestore_id, :category_id, :taste_id, :image)
   end
 end

@@ -10,8 +10,11 @@
     </div>
 
     <div class='card-body py-5 mx-auto' style='max-width: 500px;'>
-        <%= image_tag 'no_image.jpg', class: 'card-img-top ', style: 'height: 250px; object-fit: cover;' %>
-        
+        <% if @review.image.present? %>
+        <%= image_tag @review.image.url, class: 'card-img-top h-100', style: 'height: 250px object-fit: cover;' %>
+        <% else %>
+        <%= image_tag 'no_image.jpg', class: 'card-img-top h-100', style: 'height: 250px object-fit: cover;' %>
+        <% end %>
         <p class="card-title mt-4">
             <span class='fw-bold me-2'>総合評価：</span>
             <%= "★" * @review.rating.to_i + "☆" * (5 - @review.rating.to_i) %>  <%= @review.rating %>
