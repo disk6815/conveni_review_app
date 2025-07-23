@@ -1,7 +1,8 @@
 class ReviewsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
+  before_action :set_review, only: %i[edit update destroy]
   def index
-    @reviews = Review.includes(:user)
+    @reviews = Review.includes(:user).order(updated_at: :desc)
   end
 
   def show
@@ -16,35 +17,36 @@ class ReviewsController < ApplicationController
     @review_form = ReviewForm.new(review_form_params)
     @review_form.user_id = current_user.id
     if @review_form.save
-      redirect_to reviews_path
+      redirect_to reviews_path, notice: t('flash.reviews.create')
     else
+      flash.now[:alert] = t('flash.reviews.danger.create')
       render :new, status: :unprocessable_entity
     end
-    # puts @review_form.errors.full_messages
-    # puts @review_form.params.inspect
   end
 
   def edit
-    @review = current_user.reviews.find(params[:id])
     @review_form = ReviewForm.from_review(@review)
   end
 
   def update
-    @review = current_user.reviews.find(params[:id])
     @review_form = ReviewForm.from_review(@review)
     @review_form.assign_attributes(review_form_params)
 
     if @review_form.update
-      redirect_to review_path(@review), notice: "更新に成功しました"
+      redirect_to review_path(@review), notice: t('flash.reviews.update')
     else
+      flash.now[:alert] = t('flash.reviews.danger.update')
       render :edit, status: :unprocessable_entity
     end
   end
 
   def destroy
-    @review = current_user.reviews.find(params[:id])
-    @review.destroy
-    redirect_to reviews_path, notice: "saccessfully deleted."
+    if @review.destroy
+      redirect_to reviews_path, notice: t('flash.reviews.destroy')
+    else
+      flash.now[:alert] = t('flash.reviews.danger.destroy')
+      render :show, status: :unprocessable_entity
+    end
   end
 
   private
@@ -52,4 +54,8 @@ class ReviewsController < ApplicationController
   def review_form_params
     params.require(:review_form).permit(:body, :rating, :product_id, :product_name, :price, :is_official, :conveniencestore_id, :category_id, :taste_id, :image)
   end
+
+  def set_review
+    @review = current_user.reviews.find(params[:id])
+  end  
 end

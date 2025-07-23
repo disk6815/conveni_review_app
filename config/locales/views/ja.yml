@@ -4,7 +4,15 @@ ja:
       review_form:
         create: "投稿"
         update: "変更"
-
+  flash:
+    reviews:
+      create: "レビューを投稿しました"
+      update: "レビューを更新しました"
+      destroy: "レビューを削除しました" 
+      danger:
+        create: "レビューの投稿に失敗しました"
+        update: "レビューの更新に失敗しました"
+        destroy: "レビューの削除に失敗しました"
   users:
     registrations:
       new:
