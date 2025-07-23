@@ -10,7 +10,7 @@
         <%= f.text_field :product_name, class:'form-control' %>
 
         <%= f.label :price, class: 'form-label' %>
-        <%= f.number_field :price, class:'form-control' %>
+        <%= f.text_field :price, min: 0, class:'form-control' %>
         
         <%= f.label :rating, class: 'form-label' %>
         <%= f.select :rating, options_for_select((0..5).map { |n| [n, n] }), {}, class: 'form-select' %>

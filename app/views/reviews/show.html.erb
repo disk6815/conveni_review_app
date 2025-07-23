@@ -2,10 +2,12 @@
 
     <div class='d-flex align-items-center justify-content-between px-3'>
         <%= link_to '一覧ページへ', reviews_path, class: 'btn btn-secondary '%>
-
+       
         <div class='text-end'>
+         <% if current_user == @review.user %>
         <%= link_to '編集', edit_review_path(@review), class: 'btn btn-primary' %>
         <%= link_to '削除', review_path(@review), data: { turbo_method: :delete, turbo_confirm: '削除しますか？' }, class: 'btn btn-danger' %>
+        <% end %>
         </div>
     </div>
 
@@ -26,6 +28,10 @@
         <p class='card-title mt-2'>
             <span class='fw-bold me-2'>コンビニ名:</span>
             <%= @review.product.conveniencestore.name %></p>
+        <p class='card-title mt-2'>
+            <span class='fw-bold me-2'>価格:</span>
+            <%= @review.product.price.to_i %>円
+        </p>
         <p class='card-title mt-2'>
             <span class='fw-bold me-2'>カテゴリー:</span>
             <% if @review.categories.blank? %>
