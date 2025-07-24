@@ -12,13 +12,13 @@ class User < ApplicationRecord
 
   def self.nationalities_for_select
     nationalities.keys.map do |key|
-      [I18n.t("enums.user.nationality.#{key}"), key]
+      [ I18n.t("enums.user.nationality.#{key}"), key ]
     end
   end
 
   def self.languages_for_select
     languages.keys.map do |key|
-      [I18n.t("enums.user.language.#{key}"), key]
+      [ I18n.t("enums.user.language.#{key}"), key ]
     end
   end
 end

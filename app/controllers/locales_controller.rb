@@ -1,5 +1,5 @@
 class LocalesController < ApplicationController
-  skip_before_action :authenticate_user! 
+  skip_before_action :authenticate_user!
 
   def switch
     session[:locale] = params[:locale]

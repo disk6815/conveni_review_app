@@ -98,5 +98,5 @@ class ReviewForm
     rescue => e
       errors.add(:base, e.message)
       false
-  end 
+  end
 end

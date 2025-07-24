@@ -30,7 +30,7 @@ module Myapp
     end
 
     config.i18n.default_locale = :ja
-    config.i18n.available_locales = [:ja, :ko]
+    config.i18n.available_locales = [ :ja, :ko ]
 
     config.autoload_paths += %W["#{config.root}/app/validators"]
   end

@@ -23,7 +23,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   def content_type_allowlist
-    [/image\//]
+    [ /image\// ]
   end
 
 

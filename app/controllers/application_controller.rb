@@ -31,10 +31,9 @@ class ApplicationController < ActionController::Base
     if user_signed_in? && current_user.language.present?
       I18n.locale = current_user.language.to_sym
     elsif session[:locale].present?
-      I18n.locale = session[:locale].to_sym  
+      I18n.locale = session[:locale].to_sym
     else
       I18n.locale = I18n.default_locale
     end
   end
-
 end

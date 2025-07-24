@@ -18,9 +18,9 @@ class ReviewsController < ApplicationController
     @review_form = ReviewForm.new(review_form_params)
     @review_form.user_id = current_user.id
     if @review_form.save
-      redirect_to reviews_path, notice: t('flash.reviews.create')
+      redirect_to reviews_path, notice: t("flash.reviews.create")
     else
-      flash.now[:alert] = t('flash.reviews.danger.create')
+      flash.now[:alert] = t("flash.reviews.danger.create")
       render :new, status: :unprocessable_entity
     end
   end
@@ -34,18 +34,18 @@ class ReviewsController < ApplicationController
     @review_form.assign_attributes(review_form_params)
 
     if @review_form.update
-      redirect_to review_path(@review), notice: t('flash.reviews.update')
+      redirect_to review_path(@review), notice: t("flash.reviews.update")
     else
-      flash.now[:alert] = t('flash.reviews.danger.update')
+      flash.now[:alert] = t("flash.reviews.danger.update")
       render :edit, status: :unprocessable_entity
     end
   end
 
   def destroy
     if @review.destroy
-      redirect_to reviews_path, notice: t('flash.reviews.destroy')
+      redirect_to reviews_path, notice: t("flash.reviews.destroy")
     else
-      flash.now[:alert] = t('flash.reviews.danger.destroy')
+      flash.now[:alert] = t("flash.reviews.danger.destroy")
       render :show, status: :unprocessable_entity
     end
   end
@@ -53,7 +53,7 @@ class ReviewsController < ApplicationController
   def by_nationality
     @nationality = params[:code] # ここでparams[:code]を取得
     @reviews = Review.joins(:user).where(users: { nationality: @nationality }).order(updated_at: :desc)
-    render :index 
+    render :index
   end
 
   private
@@ -64,5 +64,5 @@ class ReviewsController < ApplicationController
 
   def set_review
     @review = current_user.reviews.find(params[:id])
-  end  
+  end
 end
