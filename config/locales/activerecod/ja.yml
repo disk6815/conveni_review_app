@@ -2,6 +2,12 @@ ja:
   activerecord:
     models:
       user: ユーザー
+      review_form: レビューフォーム
+      review: レビュー
+      product: 商品
+      category: カテゴリー
+      conveniencestore: コンビニ
+      tasete: 味
     attributes:
       user:
         name: 名前
@@ -10,6 +16,17 @@ ja:
         email: メールアドレス
         password: パスワード
         password_confirmation: パスワード確認
+  activemodel:
+    attributes:
+      review_form:
+        conveniencestore_id: コンビニ
+        product_name: 商品名
+        price: 価格
+        rating: 総合星評価
+        category_id: カテゴリー
+        taste_id: 味
+        body: レビュー内容
+        image: 画像
   enums:
     user:
       nationality:

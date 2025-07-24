@@ -4,31 +4,27 @@
     </a>
     <ul class="nav col-12 col-md-auto justify-content-center gap-2">
       <li>
-        <%= link_to 'home', '#',  class: 'nav-link px-2 link-secondary' %>
+        <%= link_to t('header.reviews'), reviews_path,  class: 'nav-link px-2 link-secondary' %>
       </li>
       <li>
-        <%= link_to 'home', '#',  class: 'nav-link px-2 link-secondary' %>
+        <%= link_to t('header.post'), new_review_path,  class: 'nav-link px-2 link-secondary' %>
       </li>
       <li>
-        <%= link_to 'home', '#',  class: 'nav-link px-2 link-secondary' %>
+        <%= link_to t('header.post_history'), '#',  class: 'nav-link px-2 link-secondary' %>
       </li>
       <li>
-        <%= link_to 'home', '#',  class: 'nav-link px-2 link-secondary' %>
+        <%= link_to t('header.list'), '#',  class: 'nav-link px-2 link-secondary' %>
       </li>
     </ul>
     <div>
-    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-        <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
-        <label class="btn" for="btnradio1">
-          <%= image_tag 'korea.svg'%>
-          Korean
-        </label>
+    <div class="btn-group" role="group" aria-label="Language switcher">
+      <%= link_to switch_locale_path(:ko), method: :get, class: "btn btn-outline-secondary #{'active btn-primary text-white' if I18n.locale == :ko}" do %>
+        <%= image_tag 'korea.svg' %> Korean
+      <% end %>
 
-        <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-        <label class="btn" for="btnradio2">
-          <%= image_tag 'japan.svg', class: 'pt-1'%>
-            Japanese
-        </label>
+      <%= link_to switch_locale_path(:ja), method: :get, class: "btn btn-outline-secondary #{'active btn-primary text-white' if I18n.locale == :ja}" do %>
+        <%= image_tag 'japan.svg', class: 'pt-1' %> Japanese
+      <% end %>
     </div>
       <%= link_to t("header.sign_in"), new_user_session_path, class: 'btn btn-outline-primary me-2' %>
       <%= link_to t("header.sign_up"), new_user_registration_path, class: 'btn btn-primary'%>

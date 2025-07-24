@@ -1,0 +1,72 @@
+ko:
+  helpers:
+    submit:
+      review_form:
+        create: "올리기"
+        update: "변경"
+  flash:
+    reviews:
+      create: "리뷰를 올렸습니다"
+      update: "리뷰를 갱신했습니다"
+      destroy: "리뷰를 삭제했습니다" 
+      danger:
+        create: "리뷰 올리기에 실패했습니다"
+        update: "리뷰 갱신에 실패했습니다"
+        destroy: "리뷰 삭제에 실패했습니다"
+  users:
+    registrations:
+      new:
+        title: "회원 가입"
+        sing_up: "회원 가입"
+        top: "홈으로 돌아가기"
+    sessions:
+      new:
+        title: "로그인"
+        login: "로그인"
+        not_registered: "회원 가입이 아직 안되셨나요? 여기서 가입하세요"
+        sing_up: "회원 가입"
+        top: "홈으로 돌아가기"
+  reviews:
+    index:
+      kr_link: "한국인 리뷰 보기"
+      jr_link: "일본인 리뷰 보기"
+      word_link: "모든 리뷰 보기"
+      title: "리뷰 목록"
+      rating: "종합 별점" 
+      conveniencestore: "편의점"
+      user_name: "사용자 이름"
+      nationality: "국적"  
+    show:
+      reviews_back: "목록 페이지로"
+      edit: "편집"
+      delete: "삭제"
+      confirm_destroy: "정말 삭제하시겠습니까?"
+      product_name: "상품명"
+      rating: "종합 별점"
+      conveniencestore: "편의점"
+      price: "가격"
+      yen: "엔"
+      category: "카테고리"
+      taste: "맛"
+      none: "없음"
+      body: "리뷰 내용"
+    new:
+      title: "리뷰 올리기"
+    edit:
+      title: "리뷰 편집"    
+  header:
+    sign_in: "로그인"
+    sign_up: "회원 가입"
+    logout: "로그아웃"
+    reviews: "리뷰 목록"
+    post: "올리기"
+    post_history: "올린 기록"
+    list: "리스트"
+  top:
+    reviews: "리뷰 목록"
+    post: "올리기"
+    post_history: "올린 기록"
+    list: "리스트"
+    service: "서비스 개요"
+    text_1: "모두 함께 편의점 상품을 소개하자!!"
+    text_2: "로그인 전에는 리뷰 목록만 볼 수 있어요!"

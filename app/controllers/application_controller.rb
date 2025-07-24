@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   before_action :set_header_visibility
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :authenticate_user!
+  before_action :set_locale
 
   protected
 
@@ -24,5 +25,15 @@ class ApplicationController < ActionController::Base
 
   def set_header_visibility
     @header_visible = true
+  end
+
+  def set_locale
+    if user_signed_in? && current_user.language.present?
+      I18n.locale = current_user.language.to_sym
+    elsif session[:locale].present?
+      I18n.locale = session[:locale].to_sym
+    else
+      I18n.locale = I18n.default_locale
+    end
   end
 end

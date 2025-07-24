@@ -1,6 +1,8 @@
-<h1 class='text-center'>review form</h1>
+<h1 class='text-center'><%= t('reviews.edit.title')%></h1>
 
-<div class='container w-50'>
+<%= render 'shared/error_messages', object: @review_form %>
+
+<div class='container w-50 pb-5'>
     <%= form_with model: @review_form, url: review_path(@review), method: :patch, local: true do |f| %>
         
         <%= f.label :conveniencestore_id, class: 'form-label' %>
@@ -10,16 +12,18 @@
         <%= f.text_field :product_name, class:'form-control' %>
 
         <%= f.label :price, class: 'form-label' %>
-        <%= f.number_field :price, class:'form-control' %>
-        
+        <div class="input-group">
+            <%= f.text_field :price, min: 0, class:'form-control' %>
+            <span class="input-group-text"><%= t('reviews.show.yen')%></span>
+        </div>
         <%= f.label :rating, class: 'form-label' %>
         <%= f.select :rating, options_for_select((0..5).map { |n| [n, n] }, @review_form.rating.to_i), {}, class: 'form-select' %>
         
         <%= f.label :category_id, class: 'form-label' %>
-        <%= f.collection_select :category_id, Category.all, :id, :name, {include_blank: 'なし'}, class: 'form-select' %>   
+        <%= f.collection_select :category_id, Category.all, :id, :name, {include_blank: 'none'}, class: 'form-select' %>   
 
         <%= f.label :taste_id, class: 'form-label' %>
-        <%= f.collection_select :taste_id, Taste.all, :id, :name, {include_blank: 'なし'}, class: 'form-select' %>   
+        <%= f.collection_select :taste_id, Taste.all, :id, :name, {include_blank: 'none'}, class: 'form-select' %>   
 
         <%= f.label :body, class: 'form-label' %>
         <%= f.text_area :body, class:'form-control ', style: 'height: 150px;' %>
@@ -33,6 +37,6 @@
         <%= f.file_field :image, class: 'form-control' %>
         
 
-        <%= f.submit nil , class: 'btn btn-primary w-100 mt-4'%>
+        <%= f.submit t('helpers.submit.review_form.update'), class: 'btn btn-primary w-100 mt-4'%>
     <% end %>
 </div>

@@ -1,11 +1,13 @@
 <div class='container bg-white py-3' style='border-radius: 10px;'>
 
     <div class='d-flex align-items-center justify-content-between px-3'>
-        <%= link_to '一覧ページへ', reviews_path, class: 'btn btn-secondary '%>
-
+        <%= link_to t('reviews.show.reviews_back'), reviews_path, class: 'btn btn-secondary '%>
+       
         <div class='text-end'>
-        <%= link_to '編集', edit_review_path(@review), class: 'btn btn-primary' %>
-        <%= link_to '削除', review_path(@review), data: { turbo_method: :delete, turbo_confirm: '削除しますか？' }, class: 'btn btn-danger' %>
+         <% if current_user == @review.user %>
+        <%= link_to t('reviews.show.edit'), edit_review_path(@review), class: 'btn btn-primary' %>
+        <%= link_to t('reviews.show.delete'), review_path(@review), data: { turbo_method: :delete, turbo_confirm: t('reviews.show.confirm_destroy') }, class: 'btn btn-danger' %>
+        <% end %>
         </div>
     </div>
 
@@ -16,20 +18,24 @@
         <%= image_tag 'no_image.jpg', class: 'card-img-top h-100', style: 'height: 250px object-fit: cover;' %>
         <% end %>
         <p class="card-title mt-4">
-            <span class='fw-bold me-2'>総合評価：</span>
+            <span class='fw-bold me-2'><%= t('reviews.show.rating')%>：</span>
             <%= "★" * @review.rating.to_i + "☆" * (5 - @review.rating.to_i) %>  <%= @review.rating %>
         </p>
         <p class='card-title mt-2'>
-            <span class='fw-bold me-2'>商品名:</span>
+            <span class='fw-bold me-2'><%= t('reviews.show.product_name')%>:</span>
             <%= @review.product.name %>
         </p>
         <p class='card-title mt-2'>
-            <span class='fw-bold me-2'>コンビニ名:</span>
+            <span class='fw-bold me-2'><%= t('reviews.show.conveniencestore')%>:</span>
             <%= @review.product.conveniencestore.name %></p>
         <p class='card-title mt-2'>
-            <span class='fw-bold me-2'>カテゴリー:</span>
+            <span class='fw-bold me-2'><%= t('reviews.show.price')%>:</span>
+            <%= @review.product.price.to_i %><%= t('reviews.show.yen')%>
+        </p>
+        <p class='card-title mt-2'>
+            <span class='fw-bold me-2'><%= t('reviews.show.category')%>:</span>
             <% if @review.categories.blank? %>
-                <span>なし</span>
+                <span><%= t('reviews.show.none')%></span>
             <% else %>    
                 <% @review.categories.each do |category| %>
                     <span class='badge bg-secondary'> <%= category.name %> </span>
@@ -37,16 +43,16 @@
             <% end %>    
         </p>
         <p class='card-title mt-2'>
-            <span class='fw-bold me-2'>味覚:</span>
+            <span class='fw-bold me-2'><%= t('reviews.show.taste')%>:</span>
             <% if @review.tastes.blank? %>
-                <span>なし</span>
+                <span><%= t('reviews.show.none')%></span>
             <% else %>
                 <% @review.tastes.each do |taste| %>
                     <span class='badge bg-secondary'> <%= taste.name %> </span>
                 <% end %>
             <% end %>
         </p>
-        <label class='mt-2 fw-bold'>レビュー内容:</label>
+        <label class='mt-2 fw-bold'><%= t('reviews.show.body')%>:</label>
         <div class='form-control mt-2' style='height: 150px; overflow-y: auto; word-wrap: break-word; letter-spacing: 0.05rem;'>
             <%= @review.body %>
         </div> 

@@ -11,9 +11,14 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "top#index"
+  get "/locale/:locale", to: "locales#switch", as: :switch_locale
   devise_for :users, controllers: {
     registrations: "users/registrations",
     sessions: "users/sessions"
   }
-  resources :reviews, only: %i[index show new create edit update destroy]
+  resources :reviews, only: %i[index show new create edit update destroy] do
+    collection do
+      get "nationality/:code", to: "reviews#by_nationality", as: :by_nationality
+    end
+  end
 end

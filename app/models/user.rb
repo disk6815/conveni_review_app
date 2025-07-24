@@ -10,11 +10,15 @@ class User < ApplicationRecord
 
   validates :name, presence: true, length: { maximum: 50 }
 
-  def self.nationalities_i18n # enumのキーをi18nで翻訳したものを返す
-    nationalities.keys.index_with { |key| I18n.t("enums.user.nationality.#{key}") }
+  def self.nationalities_for_select
+    nationalities.keys.map do |key|
+      [ I18n.t("enums.user.nationality.#{key}"), key ]
+    end
   end
 
-  def self.languages_i18n
-    languages.keys.index_with { |key| I18n.t("enums.user.language.#{key}") }
+  def self.languages_for_select
+    languages.keys.map do |key|
+      [ I18n.t("enums.user.language.#{key}"), key ]
+    end
   end
 end

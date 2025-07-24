@@ -18,6 +18,7 @@ class ReviewForm
 
   validates :body, presence: true, length: { maximum: 500 }
   validates :product_name, presence: true
+  validates :image, image_type: true, image_size: true
 
   def save
     return false if invalid?
