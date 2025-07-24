@@ -1,0 +1,30 @@
+ja:
+  activerecord:
+    attributes:
+      review:
+        conveniencestore: "コンビニ"
+        product_name: "商品名"
+        price: "価格"
+        rating: "総合評価"
+        category: "カテゴリー"
+        taste: "味覚"
+        body: "レビュー内容"
+        image: "画像"
+  categories:
+    # korean_food: "한국 요리"
+    # japanese_food: "일본 요리"
+    # chinese_food: "중국 요리"
+    # western_food: "양식"
+    # snack: "스낵"
+    # drink: "음료"
+    dessert: "デザート"
+    # instant_food: "인스턴트 식품"
+  tastes:
+    spicy: "辛い味"
+    # sweet: "단맛"
+    # sour: "신맛"
+    # bitter: "쓴맛"
+    # salty: "짠맛"
+    # umami: "감칠맛"
+    # mild: "부드러운맛"
+    # rich: "진한맛"
