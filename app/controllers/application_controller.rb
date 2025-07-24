@@ -2,12 +2,12 @@ class ApplicationController < ActionController::Base
   # Only allow modern browsers supporting webp images, web push, badges, import maps, CSS nesting, and CSS :has.
   allow_browser versions: :modern
   before_action :set_header_visibility
-  before_action :store_locale_before_logout, if: -> { controller_name == 'sessions' && action_name == 'destroy' }
-  before_action :store_user_locale_to_session, unless: -> { controller_name == 'sessions' && action_name == 'destroy' }
+  before_action :store_locale_before_logout, if: -> { controller_name == "sessions" && action_name == "destroy" }
+  before_action :store_user_locale_to_session, unless: -> { controller_name == "sessions" && action_name == "destroy" }
   before_action :set_locale
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :authenticate_user!
-  
+
 
   def store_locale_before_logout
     Rails.logger.debug "[Locale] Before logout - setting locale to: #{current_user&.language}"
@@ -44,9 +44,9 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_out_path_for(resource_or_scope)
-    flash[:notice] = I18n.t('devise.sessions.signed_out')
-    puts (session[:locale].to_s + 'ログアウト後のsession')
-    puts (I18n.locale.to_s + 'ログアウト後のI18n.locale') 
+    flash[:notice] = I18n.t("devise.sessions.signed_out")
+    puts (session[:locale].to_s + "ログアウト後のsession")
+    puts (I18n.locale.to_s + "ログアウト後のI18n.locale")
     root_path
   end
 
@@ -56,10 +56,10 @@ class ApplicationController < ActionController::Base
       I18n.locale = resource.language.to_sym
     end
 
-    flash[:notice] = I18n.t('devise.sessions.signed_in') # ログイン後のメッセージ
+    flash[:notice] = I18n.t("devise.sessions.signed_in") # ログイン後のメッセージ
 
     puts session[:locale] # Debugging
-    puts (I18n.locale.to_s + 'サイン後のI18n.locale')
+    puts (I18n.locale.to_s + "サイン後のI18n.locale")
 
     root_path
   end

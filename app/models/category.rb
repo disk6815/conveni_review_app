@@ -13,15 +13,15 @@ class Category < ApplicationRecord
   def convert_name_to_key(name)
     # 日本語名から翻訳キーへの変換マッピング
     name_to_key_mapping = {
-    #   '韓国料理' => 'korean_food',
-    #   '日本料理' => 'japanese_food',
-    #   '中華料理' => 'chinese_food',
-    #   '洋食' => 'western_food',
-    #   'スナック' => 'snack',
-    #   'ドリンク' => 'drink',
-      'デザート' => 'dessert',
-    #   'インスタント食品' => 'instant_food'
+      #   '韓国料理' => 'korean_food',
+      #   '日本料理' => 'japanese_food',
+      #   '中華料理' => 'chinese_food',
+      #   '洋食' => 'western_food',
+      #   'スナック' => 'snack',
+      #   'ドリンク' => 'drink',
+      "デザート" => "dessert"
+      #   'インスタント食品' => 'instant_food'
     }
-    name_to_key_mapping[name] || name.downcase.gsub(/[^a-z0-9]/, '_')
-  end  
+    name_to_key_mapping[name] || name.downcase.gsub(/[^a-z0-9]/, "_")
+  end
 end
