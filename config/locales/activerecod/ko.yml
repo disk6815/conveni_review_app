@@ -35,3 +35,12 @@ ko:
       language:
         ko: 한국어
         ja: 일본어
+  errors:
+    messages:
+      extension_whitelist_error: "파일 형식이 잘못되었습니다 (jpg, png, gif만 지원)"
+    models:
+      review_form:
+        attributes:
+          image:
+            size: "이미지는 최대 10MB까지 가능합니다"
+            type: "파일 형식이 잘못되었습니다 (jpg, png, gif만 지원)"

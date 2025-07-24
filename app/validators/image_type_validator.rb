@@ -6,7 +6,7 @@ class ImageTypeValidator < ActiveModel::EachValidator
 
     content_type = value.content_type
     unless ALLOWED_TYPES.include?(content_type)
-      record.errors.add(attribute, "のファイル形式が無効です（jpg, png, gifのみ対応）")
+      record.errors.add(attribute, I18n.t("errors.models.review_form.attributes.image.type"))
     end
   end
 end

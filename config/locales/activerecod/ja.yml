@@ -35,3 +35,11 @@ ja:
       language:
         ko: 韓国語
         ja: 日本語
+  errors:
+    models:
+      review_form:
+        attributes:
+          image:
+            size: "画像は最大で10MBまでです"
+            type: "ファイル形式が無効です（jpg, png, gifのみ対応)"
+            

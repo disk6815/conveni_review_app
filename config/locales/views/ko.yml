@@ -12,7 +12,10 @@ ko:
       danger:
         create: "리뷰 올리기에 실패했습니다"
         update: "리뷰 갱신에 실패했습니다"
-        destroy: "리뷰 삭제에 실패했습니다"
+        destroy: "리뷰 삭제에 실패했습니다" 
+  errors:
+    messages:
+      mistake: "개 오류가 발생했습니다"
   users:
     registrations:
       new:
@@ -59,12 +62,12 @@ ko:
     sign_up: "회원 가입"
     logout: "로그아웃"
     reviews: "리뷰 목록"
-    post: "올리기"
+    post: "리뷰 올리기"
     post_history: "올린 기록"
     list: "리스트"
   top:
     reviews: "리뷰 목록"
-    post: "올리기"
+    post: "리뷰 올리기"
     post_history: "올린 기록"
     list: "리스트"
     service: "서비스 개요"

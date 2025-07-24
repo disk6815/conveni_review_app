@@ -35,6 +35,9 @@
             </div>
         <% end %>
         <%= f.file_field :image, class: 'form-control' %>
+        <% if @review_form.errors[:image].present? %>
+        <div class="text-danger small mt-1">画像は再度選択してください</div>
+        <% end %>
         
 
         <%= f.submit t('helpers.submit.review_form.update'), class: 'btn btn-primary w-100 mt-4'%>

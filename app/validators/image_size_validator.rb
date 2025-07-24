@@ -5,7 +5,7 @@ class ImageSizeValidator < ActiveModel::EachValidator
     return if value.blank?
 
     if value.size > MAX_SIZE
-      record.errors.add(attribute, "のサイズが大きすぎます（10MB以下にしてください）")
+      record.errors.add(attribute, :size, message: I18n.t("errors.models.review_form.attributes.image.size"))
     end
   end
 end
