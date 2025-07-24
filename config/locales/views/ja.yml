@@ -17,9 +17,15 @@ ja:
     registrations:
       new:
         title: "ユーザー登録"
+        sing_up: "登録"
+        top: "トップページへ"
     sessions:
       new:
         title: "ログイン"
+        login: "ログイン"
+        not_registered: "新規登録がまだの方はこちらから"
+        sing_up: "新規登録"
+        top: "トップページへ"
   reviews:
     index:
       title: "レビュー一覧"
@@ -48,6 +54,7 @@ ja:
   header:
     sign_in: "ログイン"
     sign_up: "新規登録"
+    logout: "ログアウト"
     reviews: "レビュー一覧"
     post: "投稿する"
     post_history: "投稿履歴"

@@ -1,6 +1,7 @@
 class ReviewsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
   before_action :set_review, only: %i[edit update destroy]
+
   def index
     @reviews = Review.includes(:user).order(updated_at: :desc)
   end

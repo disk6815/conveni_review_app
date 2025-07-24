@@ -3,6 +3,7 @@
 class Users::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
   before_action :hide_header, only: [ :new, :create ]
+  before_action :set_locale, only: [:new, :create]
   # GET /resource/sign_in
   def new
     super

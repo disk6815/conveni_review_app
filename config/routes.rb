@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "top#index"
+  get '/locale/:locale', to: 'locales#switch', as: :switch_locale
   devise_for :users, controllers: {
     registrations: "users/registrations",
     sessions: "users/sessions"

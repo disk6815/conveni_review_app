@@ -1,0 +1,37 @@
+ko:
+  activerecord:
+    models:
+      user: 사용자
+      review_form: 리뷰 폼
+      review: 리뷰
+      product: 상품
+      category: 카테고리
+      conveniencestore: 편의점
+      tasete: 맛
+    attributes:
+      user:
+        name: 이름
+        nationality: 국적
+        language: 언어
+        email: 이메일
+        password: 비밀번호
+        password_confirmation: 비밀번호 확인
+  activemodel:
+    attributes:
+      review_form:
+        conveniencestore_id: 편의점
+        product_name: 상품명
+        price: 가격
+        rating: 총합 별점
+        category_id: 카테고리
+        taste_id: 맛
+        body: 리뷰 내용
+        image: 이미지
+  enums:
+    user:
+      nationality:
+        kr: 한국
+        jp: 일본
+      language:
+        ko: 한국어
+        ja: 일본어
