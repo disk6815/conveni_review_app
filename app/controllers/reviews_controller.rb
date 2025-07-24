@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  skip_before_action :authenticate_user!, only: %i[index show]
+  skip_before_action :authenticate_user!, only: %i[index show by_nationality]
   before_action :set_review, only: %i[edit update destroy]
 
   def index
@@ -48,6 +48,12 @@ class ReviewsController < ApplicationController
       flash.now[:alert] = t('flash.reviews.danger.destroy')
       render :show, status: :unprocessable_entity
     end
+  end
+
+  def by_nationality
+    @nationality = params[:code] # ここでparams[:code]を取得
+    @reviews = Review.joins(:user).where(users: { nationality: @nationality }).order(updated_at: :desc)
+    render :index 
   end
 
   private

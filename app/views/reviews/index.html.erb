@@ -1,5 +1,10 @@
 
 <div class='container'>
+    <div class="mb-4 text-center">
+    <%= link_to '🇰🇷' + t('reviews.index.kr_link'), by_nationality_reviews_path('kr'), class: 'btn btn-outline-success mx-1' %>
+    <%= link_to '🇯🇵' + t('reviews.index.jr_link'), by_nationality_reviews_path('jp'), class: 'btn btn-outline-primary mx-1' %>
+    <%= link_to '🌍' + t('reviews.index.word_link'), reviews_path, class: 'btn btn-outline-secondary mx-1' %>
+    </div>    
     <div class='row g-4 '>
     <% @reviews.each do |review| %>
         <div class='col-12 col-sm-6 col-md-34 col-lg-3'>
@@ -37,5 +42,4 @@
         </div>
     <% end %>
     </div>
-    <p>ページネーション</p> 
 </div>

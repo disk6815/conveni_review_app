@@ -16,5 +16,9 @@ Rails.application.routes.draw do
     registrations: "users/registrations",
     sessions: "users/sessions"
   }
-  resources :reviews, only: %i[index show new create edit update destroy]
+  resources :reviews, only: %i[index show new create edit update destroy] do
+    collection do
+      get 'nationality/:code', to: 'reviews#by_nationality', as: :by_nationality
+    end
+  end  
 end

@@ -28,6 +28,9 @@ ko:
         top: "홈으로 돌아가기"
   reviews:
     index:
+      kr_link: "한국인 리뷰 보기"
+      jr_link: "일본인 리뷰 보기"
+      word_link: "모든 리뷰 보기"
       title: "리뷰 목록"
       rating: "종합 별점" 
       conveniencestore: "편의점"

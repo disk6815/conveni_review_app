@@ -28,6 +28,9 @@ ja:
         top: "トップページへ"
   reviews:
     index:
+      kr_link: "韓国人のレビューを見る"
+      jr_link: "日本人のレビューを見る"
+      word_link: "全てのレビューを見る"
       title: "レビュー一覧"
       rating: "総合評価" 
       conveniencestore: "コンビニ名"
