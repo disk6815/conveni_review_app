@@ -7,7 +7,7 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-if Rails.env.production?
+# if Rails.env.production?
   Conveniencestore.find_or_create_by!(name: "SEVEN ELEVEN")
   Conveniencestore.find_or_create_by!(name: "Family Mart")
   Conveniencestore.find_or_create_by!(name: "LAWSON")
@@ -34,7 +34,10 @@ if Rails.env.production?
   Category.find_or_create_by!(name: "飲料")
   Category.find_or_create_by!(name: "お酒")
   Category.find_or_create_by!(name: "お菓子")
-  Category.find_or_create_by!(name: "調味料・食材")
+  category = Category.find_by(name: "調味料・食材") || Category.find_by(name: "お惣菜")
+  category.update!(name: "おつまみ・お惣菜") if category
+  category = Category.find_by(name: "その他")
+  category.touch if category
   Category.find_or_create_by!(name: "その他")
   Taste.find_or_create_by!(name: "甘い")
   Taste.find_or_create_by!(name: "少し甘い")
@@ -52,4 +55,4 @@ if Rails.env.production?
   Taste.find_or_create_by!(name: "少し苦い")
   Taste.find_or_create_by!(name: "とても苦い")
   Taste.find_or_create_by!(name: "その他")
-end
+# end
