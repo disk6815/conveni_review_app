@@ -9,13 +9,13 @@ class User < ApplicationRecord
   enum language: { ko: 0, ja: 1 }
 
   validates :name, presence: true, length: { maximum: 50 }
-  validates :password, presence: true, length: { minimum: 6, message: I18n.t('errors.messages.minimum') }
+  validates :password, presence: true, length: { minimum: 6, message: I18n.t("errors.messages.minimum") }
   validate :unique_email
   private
 
   def unique_email
     if User.where.not(id: id).exists?(email: email)
-      errors.add(:email, I18n.t('errors.messages.taken'))
+      errors.add(:email, I18n.t("errors.messages.taken"))
     end
   end
 
