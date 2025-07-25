@@ -19,6 +19,7 @@ ja:
         title: "ユーザー登録"
         sing_up: "登録"
         top: "トップページへ"
+        notice: "(6文字以上)"
     sessions:
       new:
         title: "ログイン"

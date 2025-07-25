@@ -1,3 +1,4 @@
+
 <div class='text-center'>
   <%= image_tag 'log.svg', style: 'width:200px;'%>
 </div>
@@ -29,8 +30,7 @@
 
     <div class="field mt-3">
       <%= f.label :password, class: 'form-label' %>
-      <% if @minimum_password_length %>
-      <em><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></em>      <% end %><br />
+      <span><%= t('users.registrations.new.notice', count: @minimum_password_length) %></span> <br />
       <%= f.password_field :password, autocomplete: "new-password", class: 'form-control' %>
     </div>
 
