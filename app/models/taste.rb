@@ -27,7 +27,7 @@ class Taste < ApplicationRecord
     "少し苦い" => "little_bitter",
     "とても苦い" => "too_bitter",
     "その他" => "other"
-  } 
-    name_to_key_mapping[name] || name.downcase.gsub(/[^a-z0-9]/, '_')
+  }
+    name_to_key_mapping[name] || name.downcase.gsub(/[^a-z0-9]/, "_")
   end
 end
