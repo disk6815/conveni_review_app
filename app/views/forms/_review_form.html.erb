@@ -22,7 +22,7 @@
         <%= f.select :category_id, options_for_select(localized_category_options, @review_form.category_id),{ include_blank: t('reviews.show.none') }, { class: 'form-select' } %> 
 
         <%= f.label :taste_id, class: 'form-label' %>
-        <%= f.collection_select :taste_id, Taste.all, :id, :name, {include_blank: t('reviews.show.none')}, class: 'form-select' %>   
+        <%= f.select :taste_id, options_for_select(localized_taste_options, @review_form.taste_id),{ include_blank: t('reviews.show.none') }, { class: 'form-select' } %>
 
         <%= f.label :body, class: 'form-label' %>
         <%= f.text_area :body, class:'form-control', style: 'height: 150px;' %>
