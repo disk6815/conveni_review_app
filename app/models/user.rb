@@ -9,9 +9,9 @@ class User < ApplicationRecord
   enum language: { ko: 0, ja: 1 }
 
   validates :name, presence: true, length: { maximum: 50 }
-  validates :password, presence: true, length: { minimum: 6, message: I18n.t("errors.messages.minimum") }
-  validates :email, presence: true
   validate :unique_email
+  validates :email, presence: true
+  validates :password, presence: true, confirmation: true,length: { minimum: 6, message: I18n.t("errors.messages.minimum") }
   private
 
   def unique_email
