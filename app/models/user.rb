@@ -10,6 +10,7 @@ class User < ApplicationRecord
 
   validates :name, presence: true, length: { maximum: 50 }
   validates :password, presence: true, length: { minimum: 6, message: I18n.t("errors.messages.minimum") }
+  validates :email, presence: true
   validate :unique_email
   private
 
