@@ -41,5 +41,4 @@ ja:
         attributes:
           image:
             size: "画像は最大で10MBまでです"
-            type: "ファイル形式が無効です（jpg, png, gifのみ対応)"
-            
+            type: "ファイル形式が無効です（jpg, png, gifのみ対応)" 
