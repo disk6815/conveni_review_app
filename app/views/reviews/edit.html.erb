@@ -20,7 +20,7 @@
         <%= f.select :rating, options_for_select((0..5).map { |n| [n, n] }, @review_form.rating.to_i), {}, class: 'form-select' %>
         
         <%= f.label :category_id, class: 'form-label' %>
-        <%= f.collection_select :category_id, Category.all, :id, :name, {include_blank: t('reviews.show.none')}, class: 'form-select' %>   
+        <%= f.select :category_id, options_for_select(localized_category_options, @review_form.category_id),{ include_blank: t('reviews.show.none') }, { class: 'form-select' } %> 
 
         <%= f.label :taste_id, class: 'form-label' %>
         <%= f.collection_select :taste_id, Taste.all, :id, :name, {include_blank: t('reviews.show.none')}, class: 'form-select' %>   

@@ -38,7 +38,7 @@
                 <span><%= t('reviews.show.none')%></span>
             <% else %>    
                 <% @review.categories.each do |category| %>
-                    <span class='badge bg-secondary'> <%= category.name %> </span>
+                    <span class='badge bg-secondary'> <%= category.localized_name %> </span>
                 <% end %>
             <% end %>    
         </p>
