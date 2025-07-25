@@ -140,5 +140,7 @@ ja:
       expired: の有効期限が切れました。新しくリクエストしてください。
       not_found: は見つかりませんでした。
       not_locked: はロックされていません。
+      taken: 登録できませんでした。入力内容をご確認ください
+      minimum: は6文字以上入力して下さい
       not_saved:
         other: "%{count} 件のエラーが発生したため %{resource} は保存されませんでした。"
